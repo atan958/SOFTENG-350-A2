@@ -10,19 +10,37 @@ body {
     position: relative;
 }
 
+input:focus {
+    outline: none;
+}
+
+/*------- Custom Color -------*/
+
 .custom-background-color {
     background-color: #89AC76;
+}
+
+.custom-background-color-transparent {
+    background-color: #89ac7663;
+}
+
+.custom-background-color-dark {
+    background-color: #89ac76;
+}
+
+.custom-background-color-inverted {
+    background-color: #9976AC;
 }
 
 .custom-color {
     color: #89AC76;
 }
 
-/*----- Header -----*/
+/*----- Header Section -----*/
 
 .header {
     height: 60px;
-    margin-bottom: 15px;
+    margin-bottom: 26px;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 15px 30px 0 rgba(0, 0, 0, 0.19);
     z-index: 1;
 }
@@ -60,13 +78,13 @@ nav {
 
 
 
-/*----- Content -----*/
+/*----- Content Section -----*/
 
 .content {
     width: 58%;
     margin: auto;  
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 15px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 
 /*----- Hero -----*/
@@ -84,6 +102,8 @@ nav {
     overflow: hidden;
 
     color: white;
+
+    cursor:default;
 }
 
 .cta-main-container {
@@ -117,7 +137,7 @@ nav {
 
 .cta-register-btn {
     width: 250px;
-    height: 50px;
+    height: 60px;
 
     margin: 0;
     position: absolute;
@@ -126,10 +146,12 @@ nav {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
+    border-radius: 10px;
+    border: 0;
+
     font-size: 24px;
     color: white;
-    background-color: #b937ff;
-    background-image: linear-gradient(#b937ff, rgb(178, 33, 179));
+     background-image: linear-gradient(#b937ff, rgb(178, 33, 179)); 
     cursor: pointer;
 }
 
@@ -153,7 +175,6 @@ nav {
 .panels {
     height: 400px;
     width: 100%;
-    background-color: white;
     
     display: flex;
     justify-content: center;
@@ -171,27 +192,37 @@ nav {
     padding-top: 20px;
 
     overflow: hidden;
-    background-color: #f8eaff;
+    background-color: #f4dfff;
+    background-color: #e2adff;
+    background-color: #efd0ff;
 
-    border: 1px solid #89AC76;
+
+    cursor: default;
 
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
     transition: 0.2s ease;
 }
 
 .panel:hover {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.panel:hover .article-btn{
-    bottom: 0px;
+.panel:hover .panel-btn{
+    transition: 0.5s ease;
+    opacity: 1;
+    bottom: 50px;
+}
+
+.panel:hover .panel-desc{
+    transition: 0.3s ease;
+    opacity: 0;
 }
 
 .panel-img {
     position: absolute;
     margin: 0 10%;
     width: 80%;
-    border: 0.5px solid black;
+    height: 40%;
 }
 
 .panel-title {
@@ -208,7 +239,7 @@ nav {
     transform: translate(-50%, -50%);
 }
 
-.article-desc {
+.panel-desc {
     width: 80%;
 
     text-align: justify;
@@ -222,36 +253,262 @@ nav {
     transform: translate(-50%, -50%);
 }
 
-.article-btn {
+.panel-btn {
     position: absolute;
     bottom: -60px;
-    width: 100%;
+    left: 10%;
+    width: 80%;
     height: 60px;
 
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4), 0 3px 10px 0 rgba(0, 0, 0, 0.4);
     border: 0;
+    border-radius: 10px;
     cursor: pointer;
 
-    font-size: 20px;
+    font-size: 24px;
     color: white;
+    transition: 0.3s ease;
+    opacity: 0;
+}
+
+.panel-btn:hover {
+    font-size: 23px;
+    transition: 0.1s ease;
+    box-shadow: none;
+}
+
+.panel-btn:active {
+    transition: 0.1s ease;
+    font-size: 22px;
+    box-shadow: inset 0px 0px 20px 12px rgba(0, 0, 0, 0.3);
+}
+
+/*----- Footer Section -----*/
+
+.footer {
+    width: 100%;
+    height: 100px;
+
+    margin-top: 15px;
+}
+
+
+/*------- Modal -------*/
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+
+    top:0;
+    background-color:rgba(0, 0, 0, 0.19);
+    backdrop-filter: blur(2px);
+    
+    opacity: 0;
+    z-index: -5;
     transition: 0.5s ease;
 }
 
-.article-btn:hover {
-    box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
-    font-size: 19px;
+.modal-content {
+    position: absolute;
+    left: 30%;
+
+    width: 40%;
+    height: 780px;
+
+    margin: 0vh auto auto auto;
+    padding: 0;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 15px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(240, 240, 240);
+
+    opacity: 0;
+    transition: 1s ease;
+}
+
+/*------- Modal Head -------*/
+
+.modal-head-container {
+    height: 80px;
+    width: 100%;
+    position: relative;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.modal-title {
+    display: inline-block;
+
+    font-size: 28px;
+    font-weight:200;
+    color: white;
+
+    left: 30px;
+}
+
+.modal-close-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+
+    filter: invert(100%);
+
+    right: 30px;
+    cursor: pointer;
+}
+
+.modal-close-btn:hover {
+    color: rgb(255, 0, 0);
+    width: 50px;
+    height: 50px;
+    right: 25px;
     transition: 0.2s ease;
 }
 
-.article-btn:active {
-    transition: 0.1s ease;
-    font-size: 18px;
-    box-shadow: inset 0px 0px 15px 8px rgba(0, 0, 0, 0.3);
+.modal-close-btn:active {
+    color: rgb(255, 0, 0);
+    width: 45px;
+    height: 45px;
+    right: 27.5px;
+    transition: 0s;
+    filter: invert(80%);
 }
 
-/*----- Footer -----*/
+.modal-close-btn:active {
+    color: rgb(255, 255, 255);
+}
 
-.footer {
-    width: 100vw;
-    height: 100px;
-    background-color: #89AC76;
+
+/*------- CT Form -------*/
+
+#ct-form {
+    width: 90%;
+    height: 590px;
+    margin: 0 auto;
+
+    top: 200px;
+    left:0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#userDetails {
+    width: 100%;
+    margin: auto;
+    margin: 30px 0px 10px 0px;
+}
+
+#addresses {
+    width: 100%;
+    margin: auto;
+
+    margin: 40px 0px 10px 0px;
+}
+
+#contacts {
+    margin: 40px 0px 10px 0px;
+}
+
+/*------- User Details-------*/
+
+.user-input {
+    display: inline-block;
+    width: 46%;
+}
+
+.section-title {
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px 0px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: black;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.section-title img {
+    width: 32px;
+    height: 32px;
+    float: left;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.section-title div {
+    width: 100%;
+    height: 32px;
+}
+
+.section-part input {
+    padding: 12px 12px;
+    border: 1px solid rgb(164, 164, 164);
+    border-radius: 3px;
+    margin: 5px 0;
+
+    width: 90%;
+
+    font-size: 16px;
+}
+
+.section-part input:hover {
+    transform: scale(1.01,1.01);
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 2px 2px rgba(0, 0, 0, 0.01);
+}
+
+.section-part input:active {
+    transform: scale(1.02,1.02);
+    box-shadow: none;
+}
+
+.section-part input:focus {
+    transition: 0.1s ease;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1), 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-part {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0px;
+}
+
+.submit-btn {
+    width: 96%;
+    margin: 30px 2%;
+
+    border: 0;
+    border-radius: 10px;
+
+    height: 60px;
+
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4), 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+
+    transition: 0.2s ease;
+}
+
+.submit-btn:hover {
+    font-size: 23px;
+    box-shadow: none;
+}
+
+.submit-btn:active {
+    font-size: 22px;
+    box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
 }
