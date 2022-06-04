@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;700;800&family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <section class="header ">
         <nav class="custom-background-color">
             <a href="index.html">
@@ -18,16 +19,18 @@
             </a>
             <div class="nav-links" id="navLinks">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a href="">Carbon Footprint Calculator</a></li>
-                    <li><a href="">News</a></li>
-                    <li><a href="">Membership</a></li>
-                    <li><a href="">Contact us</a></li>
+                    <li><a id="nav-link-0" href="index.html">Home</a></li>
+                    <li><a id="nav-link-1" href="#">About us</a></li>
+                    <li><a id="nav-link-2" href="#">Calculator</a></li>
+                    <li><a id="nav-link-3" href="#">News</a></li>
+                    <li><a id="nav-link-4" href="#">Membership</a></li>
+                    <li><a id="nav-link-5" href="#">Contact us</a></li>
                 </ul>
             </div>
         </nav>
     </section>
+
+    <!-- Content -->
     <section class="content">
         <div class="hero">
             <div class="cta-main-container center">
@@ -36,119 +39,110 @@
             <div class="cta-sub-container center">
                 Become a member!
             </div>
-            <button class="cta-register-btn custom-background-color-inverted" onclick="openModal()">Register</button>
+            <button class="cta-register-btn" onclick="openModal()">Register</button>
         </div>
         <div class="panels custom-background-color-transparent">
-            <div class="panel custom-background-color-inverted">
-                <img class="panel-img" src="carbon-footprint-result.png">
+            <div class="panel">
+                <!-- Credit: https://redaily.org/wp-content/uploads/2021/12/GME-Blog-CalculateCarbonFootprint-Header-2x.jpg -->
+                <img class="panel-img" src="carbon-emissions.png">
                 <div class="panel-title">
                     Carbon Footprint Calculator
                 </div>
                 <p class="panel-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum porta mauris, sed ornare leo egestas id.
+                    Uses the most comprehensive statistical data in local and global scale green house emissions to calculate your carbon footprint.
                 </p>
                 <button class="panel-btn custom-background-color">Visit</button>
             </div>
             <div class="panel">
+                <!-- Credit: https://media.istockphoto.com/photos/man-newspaper-reading-on-table-picture-id614506802?k=20&m=614506802&s=612x612&w=0&h=YlrgCqiidJfuQH1kHhYrms4ME7iDTS6L16g_5YCRLfs= -->
                 <img class="panel-img" src="newspaper.png">
                 <div class="panel-title">
                     Most Recent News
                 </div>
                 <p class="panel-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum porta mauris, sed ornare leo egestas id.
+                    Check out our latest news to see the exciting things our team and community have been up to, to help our environment.
                 </p>
                 <button class="panel-btn custom-background-color">Visit</button>
             </div>
             <div class="panel">
+                <!-- Credit: https://images.pexels.com/photos/601170/pexels-photo-601170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 -->
                 <img class="panel-img" src="people-talking.png">
                 <div class="panel-title">
                     Membership Perks
                 </div>
                 <p class="panel-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dictum porta mauris, sed ornare leo egestas id.
+                    Join our wonderful community to get involved in any of our upcoming events and to also gain other membership benefits.
                 </p>
                 <button class="panel-btn custom-background-color">Visit</button>
             </div>
         </div>
     </section>
-    <section class="footer custom-background-color">
 
+    <!-- Footer -->
+    <section class="footer custom-background-color">
+        <div class="social-media"> 
+            <!-- Credit: https://www.flaticon.com/free-icon/facebook-logo_59439?term=facebook&page=1&position=47&page=1&position=47&related_id=59439&origin=search -->
+            <img src="facebook.png">
+            <!-- Credit: https://www.flaticon.com/premium-icon/instagram_739193?term=instagram&page=1&position=14&page=1&position=14&related_id=739193&origin=search -->
+            <img src="instagram.png">
+            <!-- Credit: https://www.flaticon.com/free-icon/twitter_733635?term=twitter&page=1&position=3&page=1&position=3&related_id=733635&origin=search -->
+            <img src="twitter.png">
+        </div>
     </section>
         
     <!-- Modal -->
     <div id="modal" class="modal">
-
-        <!-- CT Form -->
         <div class="modal-content" id="modal-content">
             <div class="modal-head-container custom-background-color">
                 <div class="modal-title vertical-center">Registration Form</div>
-                <img class="modal-close-btn vertical-center" onclick="closeModal()" src="close-btn-64.png">
+                <div id="trigger-modal" class="vertical-center"  onclick="closeModal()">
+                    <img src="close-btn.png">
+                </div>
             </div>
             <div id="ct-form">
                 <form>
                     <div id="userDetails">
-                        <div class="section-title">
-                            <img src="user.png">
-                            <div>&nbsp;&nbsp;Your Details</div>
+                        <div class="user-input-container">
+                            <label id="input-label-0">Given Name</label>
+                            <input id="input-0" placeholder="Your first name">
                         </div>
-                        <div class="section-part">
-                            <div class="user-input">
-                                <label>Given Name</label>
-                                <input placeholder="Angelo">
-                            </div>
-                            <div class="user-input">
-                                <label>Surname</label>
-                                <input placeholder="Tangonan">
-                            </div>
+                        <div class="user-input-container">
+                            <label id="input-label-1">Surname</label>
+                            <input id="input-1" placeholder="Your last name">
                         </div>
-                        <div class="section-part">
-                            <div class="user-input">
-                                <label>Username</label>
-                                <input placeholder="atan958">
-                            </div>
-                            <div class="user-input">
-                                <label>Password</label>
-                                <input type="password" placeholder="*******">
-                            </div>
+                        <div class="user-input-container">
+                            <label id="input-label-2">Username</label>
+                            <input id="input-2" placeholder="Choose a username">
+                        </div>
+                        <div class="user-input-container">
+                            <label id="input-label-3">Password</label>
+                            <input id="input-3" type="password" placeholder="Choose a password">
                         </div>
                     </div>
                     <div id="addresses">
-                        <div class="section-title">
-                            <img src="location.png">
-                            <div>&nbsp;&nbsp;Your Addresses</div>
+                        <div class="user-input-container">
+                            <label id="input-label-4">Home Address</label>
+                            <input id="input-4" placeholder="Street Address, City, State">
                         </div>
-                        <div class="section-part">
-                            <div class="user-input">
-                                <label>Home Address</label>
-                                <input placeholder="Manukau City, Auckland">
-                            </div>
-                            <div class="user-input">
-                                <label>Work Address</label>
-                                <input placeholder="Auckland CBD, Auckland 1010">
-                            </div>
+                        <div class="user-input-container">
+                            <label id="input-label-5">Work Address</label>
+                            <input id="input-5" placeholder="Street Address, City, State">
                         </div>
                     </div>
                     <div id="contacts">
-                        <div class="section-title">
-                            <img src="contact.png">
-                            <div>&nbsp;&nbsp;Your Contacts</div>
+                        <div class="user-input-container">
+                            <label id="input-label-6">Mobile Number</label>
+                            <input id="input-6" input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Your phone number">
                         </div>
-                        <div class="section-part">
-                            <div class="user-input">
-                                <label>Mobile Number</label>
-                                <input type="number" placeholder="09 279 5900">
-                            </div>
-                            <div class="user-input">
-                                <label>Email</label>
-                                <input type="email" placeholder="atan958@aucklanduni.ac.nz">
-                            </div>
+                        <div class="user-input-container">
+                            <label id="input-label-7">Email</label>
+                            <input id="input-7" type="email" placeholder="Your email address">
                         </div>
                     </div>
                     <input id="form-submit" class="submit-btn custom-background-color-inverted" type="submit">
                 </form>
             </div>
         </div>
-  
     </div>
     <script src="./script.js"></script>
 </body>

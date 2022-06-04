@@ -24,14 +24,6 @@ input:focus {
     background-color: #89ac7663;
 }
 
-.custom-background-color-dark {
-    background-color: #89ac76;
-}
-
-.custom-background-color-inverted {
-    background-color: #9976AC;
-}
-
 .custom-color {
     color: #89AC76;
 }
@@ -57,12 +49,13 @@ nav {
 .nav-links {
     flex: 1;
     text-align: right;
+    font-size: 18px;
 }
 
 .nav-links ul li {
     list-style: none;
     display: inline-block;
-    padding: 8px 16px;
+    padding: 8px 14px;
     position: relative;
 }
 
@@ -74,9 +67,35 @@ nav {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    font-weight: bold;
 }
 
+.nav-links ul li a:hover {
+    color: rgb(178, 88, 55);
+    color: black;
+    transition: 0.2s ease;
+}
 
+.nav-links ul li a:active {
+    color: rgba(80, 80, 80, 0.7);
+    transition: 0.1s ease;
+}
+
+#nav-link-0 {
+    text-decoration: none;
+    margin: 10px 0px;
+    position: relative;
+}
+
+#nav-link-0::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: rgb(144, 51, 44);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
 
 /*----- Content Section -----*/
 
@@ -151,7 +170,8 @@ nav {
 
     font-size: 24px;
     color: white;
-     background-image: linear-gradient(#b937ff, rgb(178, 33, 179)); 
+    background-color: rgb(238, 80, 70);
+
     cursor: pointer;
 }
 
@@ -192,10 +212,8 @@ nav {
     padding-top: 20px;
 
     overflow: hidden;
-    background-color: #f4dfff;
-    background-color: #e2adff;
-    background-color: #efd0ff;
-
+    background-color: white;
+    background-color: rgb(255, 240, 240);
 
     cursor: default;
 
@@ -223,6 +241,7 @@ nav {
     margin: 0 10%;
     width: 80%;
     height: 40%;
+    border: 1px solid rgb(222, 222, 222);
 }
 
 .panel-title {
@@ -266,7 +285,8 @@ nav {
     cursor: pointer;
 
     font-size: 24px;
-    color: white;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
     transition: 0.3s ease;
     opacity: 0;
 }
@@ -290,10 +310,34 @@ nav {
     height: 100px;
 
     margin-top: 15px;
+    position: relative;
+    overflow: hidden;
 }
 
+.social-media {
+    display: flex;
+    justify-content: space-evenly;
+    float: right;
+    width: 20%;
+    height: 100%;
+    padding: 23px 0 0 0;
+}
 
-/*------- Modal -------*/
+.social-media img {
+    height: 48px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.social-media img:hover {
+    filter: invert(100%);
+}
+
+.social-media img:active {
+    filter: invert(70%);
+}
+
+/*------- Modal Section -------*/
 
 .modal {
     width: 100vw;
@@ -312,9 +356,9 @@ nav {
 
 .modal-content {
     position: absolute;
-    left: 30%;
+    left: 34%;
 
-    width: 40%;
+    width: 32%;
     height: 780px;
 
     margin: 0vh auto auto auto;
@@ -346,13 +390,13 @@ nav {
     display: inline-block;
 
     font-size: 28px;
-    font-weight:200;
+    font-weight:bold;
     color: white;
 
     left: 30px;
 }
 
-.modal-close-btn {
+#trigger-modal {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -363,132 +407,108 @@ nav {
     cursor: pointer;
 }
 
-.modal-close-btn:hover {
-    color: rgb(255, 0, 0);
+#trigger-modal:hover {
     width: 50px;
     height: 50px;
     right: 25px;
     transition: 0.2s ease;
 }
 
-.modal-close-btn:active {
-    color: rgb(255, 0, 0);
+#trigger-modal:active {
     width: 45px;
     height: 45px;
     right: 27.5px;
     transition: 0s;
-    filter: invert(80%);
+    filter: invert(90%);
 }
 
-.modal-close-btn:active {
-    color: rgb(255, 255, 255);
+#trigger-modal img {
+    width: 100%;
 }
 
 
 /*------- CT Form -------*/
 
 #ct-form {
-    width: 90%;
+    width: 85%;
     height: 590px;
     margin: 0 auto;
-
-    top: 200px;
-    left:0;
 
     display: flex;
     flex-direction: column;
 }
 
+#ct-form form {
+    width: 100%;
+}
+
 #userDetails {
     width: 100%;
-    margin: auto;
-    margin: 30px 0px 10px 0px;
+    margin: 35px 0;
 }
 
 #addresses {
     width: 100%;
-    margin: auto;
-
-    margin: 40px 0px 10px 0px;
+    margin: 35px 0;
 }
 
 #contacts {
-    margin: 40px 0px 10px 0px;
-}
-
-/*------- User Details-------*/
-
-.user-input {
-    display: inline-block;
-    width: 46%;
-}
-
-.section-title {
-    text-decoration: none;
-    font-size: 20px;
-    margin: 10px 0px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
     width: 100%;
-    height: 2px;
-    background: black;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
+    margin: 35px 0;
 }
 
-.section-title img {
-    width: 32px;
-    height: 32px;
-    float: left;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
+/*------- User Input -------*/
 
-.section-title div {
+.user-input-container {
+    display: flex;
     width: 100%;
-    height: 32px;
+    height: 50px;
+    margin: 10px 0 10px 0;
 }
 
-.section-part input {
-    padding: 12px 12px;
-    border: 1px solid rgb(164, 164, 164);
-    border-radius: 3px;
-    margin: 5px 0;
+.user-input-container:hover label{
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.15);
+    font-size: 17px;
+}
 
-    width: 90%;
-
+.user-input-container label {
+    width: 30%;
+    padding: 16px 0 0 10px;
+    font-weight: 500;
     font-size: 16px;
 }
 
-.section-part input:hover {
+.user-input-container input {
+    padding: 12px 12px;
+    border: 1px solid rgb(164, 164, 164);
+    border-radius: 3px;
+
+    width: 70%;
+
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.user-input-container input:hover {
     transform: scale(1.01,1.01);
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.01), 0px 0px 2px 2px rgba(0, 0, 0, 0.01);
 }
 
-.section-part input:active {
+.user-input-container input:active {
     transform: scale(1.02,1.02);
     box-shadow: none;
 }
 
-.section-part input:focus {
+.user-input-container input:focus {
     transition: 0.1s ease;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1), 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
 
-.section-part {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 10px 0px;
-}
+/*------- Submit Button -------*/
 
 .submit-btn {
-    width: 96%;
-    margin: 30px 2%;
+    width: 100%;
+    margin: 10px 0;
 
     border: 0;
     border-radius: 10px;
@@ -499,6 +519,7 @@ nav {
     color: white;
     cursor: pointer;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4), 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+    background-color: rgb(238, 80, 70);
 
     transition: 0.2s ease;
 }
